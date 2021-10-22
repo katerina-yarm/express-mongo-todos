@@ -1,8 +1,10 @@
 <nav class="blue darken-4">
   <div class="nav-wrapper">
+    <!--/указываем ссырку на главную страницу-->
     <a href="/" class="brand-logo">Todos</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
 
+      <!--если isIndex в значении true, то это активная ссылка-->
       {{#if isIndex}}
       <li class="active"><a href="/">Todos</a></li>
       {{else}}

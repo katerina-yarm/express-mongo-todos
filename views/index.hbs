@@ -1,11 +1,14 @@
 <h2>Todos page</h2>
 
+<!--Если у нас в массиве что-то есть, тогда будем рендорить список todo-->
 {{#if todos.length}}
 <ul>
+  <!--Пример обращения к циклам в хендалбарсе (передаем массив, по которому нужно произвести итерацию)-->
   {{#each todos}}
   <li class="todo">
-    <form action="/complete" method="POST">
+    <form action="/complete" method="POST"><!--Пропишем новый action, который позволяет изменыть состояние todo-->
       <label>
+        <!--Если todo выполнено нам нужно это визуально отобразить-->
         {{#if completed}}
         <input type="checkbox" checked name="completed">
         <span class="completed">{{title}}</span>
@@ -14,7 +17,8 @@
         <span>{{title}}</span>
         {{/if}}
 
-        <input type="hidden" value="{{_id}}" name="id">
+        <input type="hidden" value="{{_id}}" name="id"><!--чтобы определить какой именно todo выполнен, 
+        т.е визуально мы его не видим, но он в разметке присутствует-->
 
         <button class="btn btn-small" type="submit">Save</button>
       </label>
@@ -23,5 +27,6 @@
   {{/each}}
 </ul>
 {{else}}
+<!--Можно сюда еще передать ссылку чтобы создать новый todo-->
 <p>No todos!</p>
 {{/if}}

@@ -1,3 +1,4 @@
+//3.1 подключаем из пакета mongoose, который работает с базой данных
 const { Schema, model } = require('mongoose')
 
 const schema = new Schema({
@@ -12,3 +13,5 @@ const schema = new Schema({
 })
 
 module.exports = model('Todo', schema)
+
+//3.2 подключаем эту модель в роутере
